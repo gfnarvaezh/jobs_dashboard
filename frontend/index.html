@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="TestApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Felipe Narvaez</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/js/script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.0/moment.min.js" integrity="sha512-Izh34nqeeR7/nwthfeE0SI3c8uhFSnqxV0sI9TvTcXiFJkMd6fB644O64BRq2P/LA/+7eRvCw4GmLsXksyTHBg==" crossorigin="anonymous"></script>
+
+    <link rel="icon" href="/img/logo.svg">
+
+</head>
+
+<body class="full-screen jumbotron-fluid bg-ligt" ng-controller="testCtrl">
+    <!--Header-->
+    <header id = 'header'></header>
+    <!-- First page of the website-->
+    <!-- Title-->
+
+    <div class="jumbotron bg-white">
+        <div class="row">
+            <div class="col-md-10 mx-auto">
+                <h1 class="text-center ">Active a reactive power calculator</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="jumbotron bg-ligt">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <p>Enter the values in the boxes below in order to get the results.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Calculator and results-->
+    <div>
+        <div>
+            <form>
+                <label for="voltage">Voltage:</label>
+                <input type="number" id="voltage" name="voltage">
+                <select id="voltage_unit" name="voltage_unit">
+                    <option value="mV">mV</option>
+                    <option value="V">V</option>
+                    <option value="kV">kV</option>
+                </select><br><br>
+                <label for="current">Current:</label>
+                <input type="number" id="current" name="current">
+                <select id="current_unit" name="current_unit">
+                    <option value="mA">mA</option>
+                    <option value="A">A</option>
+                    <option value="kA">kA</option>
+                </select><br><br>
+                <label for="result">Result:</label>
+                <input type="number" id="result" name="result"><br><br>
+              </form>
+              <button name="data" type="button" onclick="test()">Click</button>
+        </div>
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <!--Aditional content-->
+    <div class="jumbotron bg-ligt">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <p>This deployment uses a simple densely connected neural network to make predictions. The backend was implemented using a Lambda function connected to the front-end using the AWS Gateway API service. The model is stored in a private S3 bucket.</p>
+                <p>Within the Lambda function, a Python script is used to call Tensorflow lite, load the model and make the prediction, returning a list with 10 elements. A layer containing Tensorflow lite was created using Docker and the AWS Linux image. The code within the Lambda function, as well as the front-end can be found in my <a href="https://github.com/gfnarvaezh">Github</a>. The front-end is in the 'personal_website' repository, the backend is in the 'mnist' repository.</p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <footer id="footer"></footer>
+
+    <!--Scripts JS-->
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0-rc.1/Chart.bundle.js"></script>
+</body>
+</html>
